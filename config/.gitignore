@@ -1,0 +1,14 @@
+.*~
+.nfs*
+*.Cat%
+*.TopCat%
+*.cdslck
+*.cdslck.*
+*.cfg%
+*.oacache
+*.oa-
+*.swp
+*.vams~
+.inca.*.*
+.cdsvmod
+inca.lnx*.*
