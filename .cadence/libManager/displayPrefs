@@ -1,0 +1,43 @@
+<!DOCTYPE CDS_DISPLAY_PREFS>
+<DISPLAY_PREFS>
+  <DISPLAY NAME="cdsdm" >
+    <ICON NAME="lock.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>0</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="checkout" >
+    <ICON NAME="unlocked.png" />
+    <COLOR>
+      <RED>255</RED>
+      <GREEN>0</GREEN>
+      <BLUE>0</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="checkin" >
+    <ICON NAME="locked.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>128</GREEN>
+      <BLUE>0</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="attention" >
+    <ICON NAME="attention.png" />
+    <COLOR>
+      <RED>225</RED>
+      <GREEN>225</GREEN>
+      <BLUE>0</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="conflict" >
+    <ICON NAME="error.png" />
+    <COLOR>
+      <RED>255</RED>
+      <GREEN>0</GREEN>
+      <BLUE>0</BLUE>
+    </COLOR>
+  </DISPLAY>
+</DISPLAY_PREFS>
