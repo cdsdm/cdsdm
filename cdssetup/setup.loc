@@ -1,0 +1,50 @@
+;
+; Default setup search locations.
+;
+; This file is found in the first of the following locations
+; that has a setup.loc or cdssetup/setup.loc file:
+;
+;	.
+;	$CDS_WORKAREA
+;	$CDS_SEARCHDIR
+;	"~" (users home directory)
+;	$CDS_PROJECT
+;	$CDS_SITE
+;	$(compute:THIS_TOOL_INST_ROOT)/share
+; 
+; Note that for this release we have introduced a new preferred syntax
+; to represent a tool's installation root, $(compute:THIS_TOOL_INST_ROOT).
+; This syntax is equivalent to the old $CDS_INST_DIR syntax but better
+; reflects how the evaluation is done. The old $CDS_INST_DIR syntax is
+; still supported in this release, however it may be deprecated in a
+; future release. The behavior of $CDS_INST_DIR is unchanged. Please
+; remember that $CDS_INST_DIR is not interpreted as an enviroment variable 
+; and any such variable is ignored.
+;
+; The value of $(compute:THIS_TOOL_INST_ROOT) is equivalent to the value 
+; of running 
+;      cds_root <exe_name>
+; (where exe_name is the name of the executable run when the file is read.)
+;
+; Feel free to make a copy of the default setup.loc file in
+; $(compute:THIS_TOOL_INST_ROOT)/share/cdssetup/setup.loc to any of the other locations
+; and add additional places to search (e.g. to setup up a site specific
+; search list).
+; 
+; Format: one entry per line, everything after the first blank or
+; tab is a comment, ';' or '#' or '--' at the start of a line is a comment.
+; $envvar, ${envvar}, ~, and ~user are expanded as needed.
+;
+; If an environment variable is not defined, then that entry is ignored.
+; No errors are generated.
+;
+.			cwd should always be searched first
+@LIBRARY		look in the design libraries for the file
+$CDS_WORKAREA		user workarea if defined
+$CDS_SEARCHDIR		this is set by various tools during tool startup
+$HOME			
+$CDS_PROJECT		project storage area, ignored if not defined
+$CDS_SITE		Site Setup Info - default is $CDS_INST_DIR/share/local
+$(compute:THIS_TOOL_INST_ROOT)/share	Cadence Default Setup Info
+;
+; $CDS_INST_DIR/share 	Old entry for Cadence Default Setup Info
