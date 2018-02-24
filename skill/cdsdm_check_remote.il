@@ -10,7 +10,7 @@ procedure( cdsdm_check_remote( lib )
       cdsdm_cdslib( lib "conflict" )
       return = "conflicting"
     else
-      cid = ipcBatchProcess( sprintf(nil "cd %s && %s remote show origin" path cdsdm_git->git)  "" "" )
+      cid = ipcBatchProcess( sprintf(nil "%s -C %s remote show origin" cdsdm_git->git path)  "" "" )
       ipcWaitForProcess( cid )
       while( irp=ipcReadProcess( cid 10 ) irp1 = irp )
       foreach( x parseString(irp1 "\n") irp2=cons(schRemoveLeadingWhiteSpace( schRemoveTrailingWhiteSpace(x) ) irp2) )

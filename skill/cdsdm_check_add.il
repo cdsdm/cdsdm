@@ -6,7 +6,7 @@ procedure( cdsdm_check_add(lib)
 
     path = ddGetObjReadPath(ddGetObj(lib))
 
-    cid = ipcBatchProcess( sprintf(nil "cd %s && %s status -s" path cdsdm_git->git )  "" "" )
+    cid = ipcBatchProcess( sprintf(nil "%s -C %s status -s" cdsdm_git->git path )  "" "" )
     ipcWaitForProcess( cid )
     irp=ipcReadProcess( cid 10 )
 

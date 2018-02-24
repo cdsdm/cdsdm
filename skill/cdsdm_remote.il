@@ -6,7 +6,7 @@ procedure( cdsdm_remote(lib)
 
     path = ddGetObjReadPath(ddGetObj(lib))
 
-    cid = ipcBatchProcess( sprintf(nil "cd %s ; %s config remote.origin.url" path cdsdm_git->git)  "" "" )
+    cid = ipcBatchProcess( sprintf(nil "%s -C %s config remote.origin.url" cdsdm_git->git path)  "" "" )
     ipcWaitForProcess( cid )
 
     when( (irp=ipcReadProcess( cid 10 ))

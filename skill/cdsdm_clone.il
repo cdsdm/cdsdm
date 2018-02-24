@@ -28,10 +28,10 @@ procedure( cdsdm_clone()
             if( isDir( work_path ) || member( lib ddGetLibList()~>name )  then
 	      printf( sprintf(nil "*ERROR* '%s' already exists.\n" work_path ) )
 	    else
-	      if( shell( sprintf( nil "cd %s && %s clone -q %s %s"  work_dir cdsdm_git->git options repo ))  then
-	        shell( sprintf( nil "cd %s ; %s config core.filemode false" path cdsdm_git->git ) )
-	        shell( sprintf( nil "cd %s ; %s ugo-w %s" work_dir cdsdm_git->chmod lib ) )
-	        shell( sprintf( nil "cd %s ; %s -R ugo-w %s/[0-z]*" work_dir cdsdm_git->chmod lib ))
+	      if( shell( sprintf( nil "%s -C %s clone -q %s %s" cdsdm_git->git work_dir options repo ))  then
+	        shell( sprintf( nil "%s -C %s config core.filemode false" cdsdm_git->git path) )
+	        shell( sprintf( nil "%s ugo-w %s/%s" cdsdm_git->chmod work_dir lib ) )
+	        shell( sprintf( nil "%s -R ugo-w %s/%s/[0-z]*" cdsdm_git->chmod work_dir lib ))
 
 	        iport = infile( backup )
 	        oport = outfile( cdslib )

@@ -34,7 +34,7 @@ procedure( cdsdm_push(lib)
 procedure( cdsdm_push_cb( path )
   let( ( cid irp )
 
-    cid = ipcBatchProcess( sprintf(nil "cd %s && %s push origin master" path cdsdm_git->git)  "" "" )
+    cid = ipcBatchProcess( sprintf(nil "%s -C %s push origin master" cdsdm_git->git path)  "" "" )
     ipcWaitForProcess( cid )
     while( irp=ipcReadProcess( cid 10 )
       lmgrDisplayMessage(sprintf(nil "[push] %s" irp) )

@@ -13,7 +13,7 @@ procedure( cdsdm_pull(lib)
 	shell(sprintf(nil "%s u+w %s" cdsdm_git->chmod path))
 	shell(sprintf(nil "%s -R u+w %s/[0-z]*" cdsdm_git->chmod path))
 
-	cid = ipcBatchProcess( sprintf(nil "cd %s && %s pull" path cdsdm_git->git)  "" "" )
+	cid = ipcBatchProcess( sprintf(nil "%s -C %s pull" cdsdm_git->git path)  "" "" )
 	ipcWaitForProcess( cid )
 	while( irp=ipcReadProcess( cid 10 )
 	  lmgrDisplayMessage(sprintf(nil "[pull] %s" irp) )

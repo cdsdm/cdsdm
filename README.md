@@ -2,7 +2,7 @@
 Cadence Virtuoso Design Management System
 
 ## What is cdsDM?
-cdsDM is design management using Git.
+cdsDM is design management system using Git.
 
 ## Installation and setup
 
@@ -21,16 +21,25 @@ cdsDM is design management using Git.
 
 * Git init  
 create empty shared git repository in your local or github, gitlab, gitolite, gitbucket, etc.  
+e.g.)
+ git init --bare --shared {remote_repository_path}/myLib.git
 
 * Init (execute only by owner)  
 configure required files for the cadence library to an empty git repository.  
 Library Manager=>cdsDM=>Setup=>Init...  
 enter an empty git repository in the repository field and click OK.  
+e.g.)
+ Repository: {remote_repository_path}/myLib.git
 
 * Clone (execute other members)  
 clone library in local directory.  
 Library Manager=>cdsDM=>Clone...  
-enter repository and click OK.  
+enter remote repository and click OK.  
+e.g.)
+ Repository: {remote_repository_path}/myLib.git
+ Options: --depth 1
+
+![Alt text](/img/image1.jpg)
 
 ## How to use
 
@@ -39,10 +48,14 @@ Library Manager=>cdsDM=>Checkout
 to edit cellviews, you check out library.  
 library is read-only until you check it out for editing.  
 
+![Alt text](/img/image2.jpg)
+
 * Checkin  
 Library Manager=>cdsDM=>Checkin  
 when you check and save all cellviews, you checkin library.  
 library returns to read-only.  
+
+![Alt text](/img/image3.jpg)
 
 * Cancel Checkout  
 Library Manager=>cdsDM=>Cancel Checkout  

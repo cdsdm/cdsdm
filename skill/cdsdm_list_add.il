@@ -5,7 +5,7 @@ procedure( cdsdm_list_add(lib)
   let( ( path cid irp (alist "") xx update new (clist nil) (flist nil) cvlist (alllist nil) ) 
 
     path = ddGetObjReadPath(ddGetObj(lib))
-    cid = ipcBatchProcess( sprintf(nil "cd %s && %s status -s" path cdsdm_git->git )  "" "" )
+    cid = ipcBatchProcess( sprintf(nil "%s -C %s status -s" cdsdm_git->git path)  "" "" )
     ipcWaitForProcess( cid )
     while( irp=ipcReadProcess(cid 10) alist = sprintf(nil "%s%s" alist irp) )
 
