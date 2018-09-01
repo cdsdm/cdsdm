@@ -13,7 +13,7 @@ procedure( cdsdm_checkin( lib )
 	  foreach( x  cdsdm_checkin_form->cdsdm_checkin_files_field->value
 	    case( car(parseString(x))
 	        ( ("M" "N" "A" "R" "C" "T")
-			add_file = strcat( add_file " " cadr(parseString(x)) )  
+			add_file = strcat( add_file " '" cadr(parseString(x)) "'" )  
 			when( strlen(add_file) > 512
 			  cid = ipcBatchProcess( sprintf(nil "%s -C %s add %s" cdsdm_git->git path add_file)  "" "" )
 			  while( ipcReadProcess( cid 10 )  ipcWaitForProcess( cid ) )
@@ -22,7 +22,7 @@ procedure( cdsdm_checkin( lib )
 			)
 	        )
 	        ( ("D")
-			rm_file = strcat( rm_file " " cadr(parseString(x)) )  
+			rm_file = strcat( rm_file " '" cadr(parseString(x)) "'" )  
 			when( strlen(rm_file) > 512
 			  cid = ipcBatchProcess( sprintf(nil "%s -C %s rm %s" cdsdm_git->git path rm_file)  "" "" )
 			  while( ipcReadProcess( cid 10 )  ipcWaitForProcess( cid ) )
@@ -223,8 +223,7 @@ procedure( cdsdm_checkin_merge(lib)
 
         cdsdm_cdslib( lib "checkin" )
     
-	shell(sprintf(nil "%s u-w %s" cdsdm_git->chmod path))
-	shell(sprintf(nil "%s -R u-w %s/[0-z]* %s" cdsdm_git->chmod path cdsdm_git->bg))
+	cdsdm_permission(path "-")
 
 	ddUpdateLibList()
       )

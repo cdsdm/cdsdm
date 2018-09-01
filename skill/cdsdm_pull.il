@@ -10,8 +10,7 @@ procedure( cdsdm_pull(lib)
 
     when( branch==master && cdsdm_remote(lib)
       if( cdsdm_check_remote(lib) == "local out of date"  then
-	shell(sprintf(nil "%s u+w %s" cdsdm_git->chmod path))
-	shell(sprintf(nil "%s -R u+w %s/[0-z]*" cdsdm_git->chmod path))
+	cdsdm_permission(path "+")
 
 	cid = ipcBatchProcess( sprintf(nil "%s -C %s pull" cdsdm_git->git path)  "" "" )
 	ipcWaitForProcess( cid )
@@ -19,8 +18,7 @@ procedure( cdsdm_pull(lib)
 	  lmgrDisplayMessage(sprintf(nil "[pull] %s" irp) )
 	)
 
-	shell(sprintf(nil "%s u-w %s" cdsdm_git->chmod path))
-	shell(sprintf(nil "%s -R u-w %s/[0-z]* %s" cdsdm_git->chmod path cdsdm_git->bg))
+	cdsdm_permission(path "-")
 
 	cdsdm_cdslib(lib "checkin")
 	return = t

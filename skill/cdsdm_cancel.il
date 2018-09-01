@@ -47,8 +47,7 @@ procedure( cdsdm_cancel(lib)
 	  ; permission
 	  branch = cdsdm_check_branch(lib)
 	  when( branch == master
-	    shell(sprintf(nil "%s u-w %s" cdsdm_git->chmod path))
-	    shell(sprintf(nil "%s -R u-w %s/[0-z]* %s" cdsdm_git->chmod path cdsdm_git->bg))
+	    cdsdm_permission(path "-")
 	  )
 
         )

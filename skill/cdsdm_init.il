@@ -46,8 +46,7 @@ procedure( cdsdm_init()
 	shell( sprintf( nil "cd %s && %s push -q origin master" path cdsdm_git->git ) )
 
 	;;; permission
-        shell( sprintf( nil "cd %s && %s ugo-w %s" cdsdm_git->work_dir cdsdm_git->chmod lib ) )
-        shell( sprintf( nil "cd %s && %s -R ugo-w %s/[0-z]*" cdsdm_git->work_dir cdsdm_git->chmod lib ))
+	cdsdm_permission(path "-")
 	
       )
     )

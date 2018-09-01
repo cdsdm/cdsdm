@@ -13,8 +13,7 @@ procedure( cdsdm_checkout(lib)
       if( cdsdm_check_remote(lib)=="conflicting" then
 	lmgrDisplayMessage("[checkout] *ERROR* conflicting\n")
       else
-	shell(sprintf(nil "%s u+w %s" cdsdm_git->chmod path))
-	shell(sprintf(nil "%s -R u+w %s/[0-z]* %s" cdsdm_git->chmod path cdsdm_git->bg))
+	cdsdm_permission(path "+")
 
         cid = ipcBatchProcess( sprintf(nil "%s -C %s checkout -b %d" cdsdm_git->git path new_branch ) "" "" )
         ipcWaitForProcess( cid )

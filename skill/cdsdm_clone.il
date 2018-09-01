@@ -30,8 +30,7 @@ procedure( cdsdm_clone()
 	    else
 	      if( shell( sprintf( nil "%s -C %s clone -q %s %s" cdsdm_git->git work_dir options repo ))  then
 	        shell( sprintf( nil "%s -C %s config core.filemode false" cdsdm_git->git path) )
-	        shell( sprintf( nil "%s ugo-w %s/%s" cdsdm_git->chmod work_dir lib ) )
-	        shell( sprintf( nil "%s -R ugo-w %s/%s/[0-z]*" cdsdm_git->chmod work_dir lib ))
+		cdsdm_permission(path "-")
 
 	        iport = infile( backup )
 	        oport = outfile( cdslib )

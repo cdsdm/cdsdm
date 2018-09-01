@@ -21,6 +21,10 @@ load( strcat( cdsdm_git->skill "/load.il" ) )
 cdsdm_git->work_dir = "./"
 cdsdm_git->backup_name = ".cds.lib.cdsdm"
 cdsdm_git->backup_path = cdsdm_cdslib_backup()
+cdsdm_git->dotfiles = list(".gitattributes" ".gitignore" ".gitweb" ".oalib"
+			   ".backlog" ".bugzilla" ".jira" ".mantis" ".opentask" ".redmine" ".scarab" ".trac"
+			   ".bitbucket" ".gitbucket" ".gitblit" ".github" ".gitlab" ".gitolite" ".gitosis" ".gitweb"
+			   ".jenkins")
 
 cdsdm_git->master = "master"
 cdsdm_git->max_branch = 60
