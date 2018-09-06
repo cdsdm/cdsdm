@@ -41,6 +41,9 @@ procedure( cdsdm_cancel(lib)
 	  cid = ipcBatchProcess( sprintf(nil "%s -C %s branch -D %s" cdsdm_git->git path branch ) "" "" )
 	  ipcWaitForProcess(cid)
 	  while( irp=ipcReadProcess(cid 10) lmgrDisplayMessage(sprintf(nil "[cancel] %s" irp) ) )
+	  cid = ipcBatchProcess( sprintf(nil "%s -C %s clean -df" cdsdm_git->git path ) "" "" )
+	  ipcWaitForProcess(cid)
+	  while( irp=ipcReadProcess(cid 10) lmgrDisplayMessage(sprintf(nil "[cancel] %s" irp) ) )
 
 	  cdsdm_cdslib( lib "checkin" )
     
