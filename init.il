@@ -27,7 +27,7 @@ cdsdm_git->dotfiles = list(".gitattributes" ".gitignore" ".gitweb" ".oalib"
 			   ".jenkins")
 
 cdsdm_git->master = "master"
-cdsdm_git->max_branch = 60
+cdsdm_git->max_branch = 40
 cdsdm_git->clone_options = "--depth 1"
 cdsdm_git->bg = "&"	; "&" or ""
 cdsdm_git->push = t	; t or nil

@@ -222,6 +222,9 @@ procedure( cdsdm_checkin_merge(lib)
         while( irp=ipcReadProcess(cid 10) lmgrDisplayMessage(sprintf(nil "[checkin] %s" irp) ) )
 
         cdsdm_cdslib( lib "checkin" )
+
+	;; gc
+	cdsdm_gc(lib)
     
 	cdsdm_permission(path "-")
 
