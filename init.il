@@ -39,7 +39,7 @@ cdsdm_git->chmod = "/bin/chmod"
 cdsdm_git->cp = "/bin/cp"
 cdsdm_git->git = "git"
 cdsdm_git->gitk = "gitk"
-cdsdm_git->git-lfs = "git-lfs"
+cdsdm_git->git_lfs = "git-lfs"
 cdsdm_git->rm = "/bin/rm"
 cdsdm_git->xterm = "/usr/bin/xterm"
 

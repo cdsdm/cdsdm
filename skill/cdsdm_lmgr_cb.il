@@ -30,7 +30,7 @@ procedure( cdsdm_lmgr_cb(@optional lmgr lib cell view ver dum )
       )
       lmgrSensitizeMenuItems( list( "cdsdm_lmgr_branch" ) nil )
       lmgrSensitizeMenuItems( list( "cdsdm_lmgr_diff" "cdsdm_lmgr_revert" "cdsdm_lmgr_recover" ) nil )
-      lmgrSensitizeMenuItems( list( "cdsdm_lmgr_tag" "cdsdm_lmgr_gc" "cdsdm_lmgr_archive" ) nil )
+      lmgrSensitizeMenuItems( list( "cdsdm_lmgr_tag" "cdsdm_lmgr_archive" ) nil )
 
     else
 

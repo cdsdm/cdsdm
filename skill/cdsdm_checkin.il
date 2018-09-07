@@ -224,7 +224,7 @@ procedure( cdsdm_checkin_merge(lib)
         cdsdm_cdslib( lib "checkin" )
 
 	;; gc
-	cdsdm_gc(lib)
+	cdsdm_gc(lib "--auto")
     
 	cdsdm_permission(path "-")
 
