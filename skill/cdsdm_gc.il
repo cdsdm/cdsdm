@@ -2,11 +2,9 @@
 ;
 
 procedure( cdsdm_gc(lib @optional options)
-  let( ( path branch master cid irp )
+  let( ( path )
 
     path = ddGetObjReadPath(ddGetObj(lib))
-    branch = cdsdm_check_branch(lib)
-    master = cdsdm_git->master
 
     unless(options  options = "")
 

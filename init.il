@@ -32,7 +32,7 @@ cdsdm_git->clone_options = "--depth 1"
 cdsdm_git->bg = "&"	; "&" or ""
 cdsdm_git->push = t	; t or nil
 cdsdm_git->max_log = 60
-cdsdm_git->log_format = "'%h (%cD) %an: %s'"
+cdsdm_git->log_format = "'%h %an (%cD): %s %D'"
 
 ; command
 cdsdm_git->chmod = "/bin/chmod"
@@ -40,6 +40,7 @@ cdsdm_git->cp = "/bin/cp"
 cdsdm_git->git = "git"
 cdsdm_git->gitk = "gitk"
 cdsdm_git->git_lfs = "git-lfs"
+cdsdm_git->gzip = "/bin/gzip"
 cdsdm_git->rm = "/bin/rm"
 cdsdm_git->xterm = "/usr/bin/xterm"
 
