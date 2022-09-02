@@ -39,7 +39,7 @@ e.g.)
  Repository: {remote_repository_path}/myLib.git
  Options: --depth 1
 
-![Alt text](/img/image1.jpg)
+![Alt text](/img/image1.png)
 
 ## How to use
 
@@ -48,14 +48,14 @@ Library Manager=>cdsDM=>Checkout
 to edit cellviews, you check out library.  
 library is read-only until you check it out for editing.  
 
-![Alt text](/img/image2.jpg)
+![Alt text](/img/image2.png)
 
 * Checkin  
 Library Manager=>cdsDM=>Checkin  
 when you check and save all cellviews, you checkin library.  
 library returns to read-only.  
 
-![Alt text](/img/image3.jpg)
+![Alt text](/img/image3.png)
 
 * Cancel Checkout  
 Library Manager=>cdsDM=>Cancel Checkout  
